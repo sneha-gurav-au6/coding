@@ -1,0 +1,31 @@
+#language :python
+#problem2
+
+
+a = list(map(int,input("\nEnter the numbers : ").strip().split()))
+b =list(map(int,input("\nEnter the numbers : ").strip().split()))
+
+breadpair = int(a[0]/2)
+samosa = a[2]
+vada = a[1]
+samosapav=0
+vadapav=0
+
+# to get profit from samosapav we are using all breadpairs for samosa.and reanaing breadpair are using for vadapav
+if(breadpair>=samosa):
+ samosapav = (samosa)
+ breadpair=(breadpair-samosa)
+else:
+   samosapav=breadpair
+   breadpair=0
+
+if(breadpair !=0):
+  if((vada>=breadpair )):
+   vadapav = breadpair
+  if((vada<=breadpair)):
+     vadapav = vada
+else:
+  vadapav=0
+
+maximumprofit = ((samosapav*b[1])+(vadapav*b[0]))
+print(maximumprofit)

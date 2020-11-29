@@ -1,0 +1,19 @@
+#problem 1 
+#language: python
+
+
+
+n = int(input("Enter number of server : ")) 
+a = list(map(int,input("\nEnter the number load: ").strip().split()))
+
+server = 0
+
+for i in range(0,(len(a))):
+  # if load is less than 50 %
+  if(a[i]<=50):
+    server = (n/2)
+# if load more than 50%
+  if(a[i]>=50):
+    server=((2*n) +1)
+
+print(server)
